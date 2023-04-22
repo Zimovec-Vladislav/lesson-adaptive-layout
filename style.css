@@ -17,7 +17,8 @@ body {
 }
 
 .container {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     padding: 1rem;
     margin: 20px auto;
 
@@ -26,6 +27,7 @@ body {
 
 .flex {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .flex-item {
@@ -44,4 +46,36 @@ body {
 
 .blue {
     background-color: #0d59d3;
+}
+
+/* Media */
+
+@media (max-width: 800px) {
+    .flex-item {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .flex-item {
+        flex-basis: 100%;
+    }
+
+    .red {
+        order: 1;
+    }
+
+    .green {
+        order: 2;
+    }
+
+    .blue {
+        order: 3;
+    }
+}
+
+@media (max-height: 375px) and (orientation: landscape) {
+    .flex-item {
+        height: 400px;
+    }
 }
